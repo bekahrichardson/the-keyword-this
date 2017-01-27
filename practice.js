@@ -1,19 +1,26 @@
 //We're in a job interview. Answer the following questions (try to not look at your notes unless you have to).
   // 1) What is the purpose of the 'this keyword'?
 
-      //Answer
+      //"this" is a placeholder. It's for the properties of a constructor function and we will be passing in values to those properties.
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
-      //Answer
+      //1. Did someone tell me explicitly what my EC was? If so, that is my contact.
+      //2. Do I have an implicit context? Was I invoked from the left of the dot? If so, that will be my contact.
+      // 3. Default is window
+      //4. We will learn the fourth one later
+
+      //Official rules: explicit, implicit, window/default, and new/constructor
+
 
   // 3) What is the difference between call and apply?
 
-      //Answer
+      //Call takes the parameters explicityly in the order that they were listed. "bind() will glue together an object as a parameter to a function in which the function will lateruse to find a certain property."
+      //Apply takes the parameters as arrays. "apply() accepts an array that holsters the parameters for the function."
 
   // 4) What does .bind do?
 
-      //Answer
+      //Bind is a function that exists on objects that are functions. It's purpose is to call the original function.
 
 
 //Next Problem
@@ -23,7 +30,12 @@
   //email --> which is a string
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
-    //Code Here
+    function user(username, email, getUsername){
+      //this = {}
+      this.username = username;
+      this.email = email;
+      this.getUsername = getUsername;
+    }
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
 
