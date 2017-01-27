@@ -52,6 +52,10 @@ user.getUsername();
     this.make = make;
     this.model = model;
     this.year = year;
+
+    this.moveCar = function() {
+      return this.move += 10;
+    }
   }
 
 var prius = new Car('Toyota', 'Prius', 2011);
