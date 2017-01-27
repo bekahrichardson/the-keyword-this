@@ -21,6 +21,7 @@
   // 4) What does .bind do?
 
       //Bind is a function that exists on objects that are functions. It's purpose is to call the original function.
+      // "bind() will glue together an object as a parameter to a function in which the function will lateruse to find a certain property."
 
 
 //Next Problem
@@ -30,22 +31,28 @@
   //email --> which is a string
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
-    function user(username, email, getUsername){
-      //this = {}
-      this.username = username;
-      this.email = email;
-      this.getUsername = getUsername;
+    var user = {
+      username:"string",
+      email:"email@gmail.com",
+      getUsername: function() {
+        return this.username;
+      }
     }
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
-
+user.getUsername();
 
 //Next Problem
 
 
 // Write the function definitions which will make the following function invocations function properly.
 
-  //Function Invocations Here
+  function Car(make, model, year) {
+    //this = {}
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
 
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
